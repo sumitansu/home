@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Speedabraker - Personal Landing Page">
+  <meta name="theme-color" content="#1a0a2e">
+  <title>Speedabraker | Sumit</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Animated Dark Veil Background -->
+  <div class="background" aria-hidden="true">
+    <!-- Parallax Background Elements -->
+    <div class="stars-container" id="starsContainer"></div>
+    <div class="aurora" id="aurora"></div>
+    
+    <!-- Interactive Glowing Borders -->
+    <div class="border-glow-container">
+      <div class="glow-edge glow-top" id="glowTop"><div class="glow-bulge"></div></div>
+      <div class="glow-edge glow-bottom" id="glowBottom"><div class="glow-bulge"></div></div>
+      <div class="glow-edge glow-left" id="glowLeft"><div class="glow-bulge"></div></div>
+      <div class="glow-edge glow-right" id="glowRight"><div class="glow-bulge"></div></div>
+    </div>
+
+    <!-- Original Base Layers (keeping if needed, but reducing importance) -->
+    <div class="veil-layer veil-1"></div>
+    <div class="veil-layer veil-2"></div>
+  </div>
+
+  <!-- Click to Enter Overlay -->
+  <div id="click-overlay" class="click-overlay">
+    <div class="particles-container" id="particles"></div>
+    <div class="aurora-gradient"></div>
+    <div class="noise-overlay"></div>
+    
+    <div class="overlay-content magnetic-wrap" id="magneticWrap">
+      <div class="magnetic-inner">
+        <h1 class="cta-text" id="ctaText" data-text="CLICK TO ENTER">CLICK TO ENTER</h1>
+        <div class="cta-underline"></div>
+        <div class="cta-subtext">IMMERSIVE EXPERIENCE</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Top Navigation - Transforms on hover/click -->
+  <nav class="top-nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-box glassmorphism" id="navBox">
+      <!-- Collapsed State -->
+      <div class="nav-collapsed" id="navCollapsed">
+        <a href="https://sumitansu.github.io/home/" class="nav-icon-btn" aria-label="Home" id="homeBtn">
+          <img src="new animated logo/menu-ezgif.com-gif-maker.gif" alt="Home" class="icon-gif">
+          <span class="btn-text shine-text">home</span>
+        </a>
+        <button class="nav-icon-btn" aria-label="Menu" id="menuBtn">
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <span class="btn-text shine-text">menu</span>
+        </button>
+        <button class="nav-icon-btn" aria-label="Music" id="musicBtn">
+          <img src="new animated logo/music-ezgif.com-gif-maker.gif" alt="Music" class="icon-gif">
+          <span class="btn-text shine-text">music</span>
+        </button>
+      </div>
+      
+      <!-- Expanded Menu State -->
+      <div class="nav-expanded" id="navExpanded">
+        <a href="https://sumitansu.github.io/about/" class="menu-item" id="aboutBtn">
+          <img src="new animated logo/about-ezgif.com-gif-maker.gif" alt="About" class="icon-gif">
+          <span>About</span>
+        </a>
+        <button class="menu-item" id="statusBtn">
+          <img src="new animated logo/stats-ezgif.com-gif-maker.gif" alt="Status" class="icon-gif">
+          <span>Status</span>
+        </button>
+        <button class="menu-item" id="gamesBtn">
+          <img src="new animated logo/discord-ezgif.com-gif-maker.gif" alt="Games" class="icon-gif">
+          <span>Games</span>
+        </button>
+        <button class="menu-item" id="closeMenu">
+          <div class="custom-close">
+            <span></span>
+            <span></span>
+          </div>
+          <span>Close</span>
+        </button>
+      </div>
+      
+      <!-- Music Section (Hidden by default) -->
+      <div class="nav-music" id="navMusic">
+        <!-- Play/Pause Button -->
+        <button class="music-ctrl-btn" id="playPauseBtn" aria-label="Play/Pause">
+          <div class="play-pause-icon">
+            <span class="bar bar-1"></span>
+            <span class="bar bar-2"></span>
+          </div>
+        </button>
+        
+        <!-- Elastic Volume Bar -->
+        <div class="volume-wrapper">
+          <div class="volume-icon">
+            <i data-lucide="volume-2"></i>
+          </div>
+          <div class="elastic-slider" id="volumeSlider">
+            <div class="slider-track"></div>
+            <div class="slider-fill" id="volumeFill"></div>
+            <div class="slider-thumb" id="volumeThumb"></div>
+          </div>
+        </div>
+
+        <!-- Close Button -->
+        <button class="menu-item" id="closeMusic">
+          <div class="custom-close">
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Center -->
+  <main class="hero" id="hero">
+    <div class="hero-content" id="heroContent">
+      <!-- Main Title -->
+      <h1 class="title">
+        <span class="shimmer-text">Speedabraker</span>
+      </h1>
+      
+      <!-- Social Row -->
+      <div class="social-row">
+        <!-- Social Box - Transforms into grid on hover -->
+        <div class="social-box glassmorphism" id="socialBox">
+          <!-- Collapsed: just icon + text -->
+          <div class="social-collapsed" id="socialCollapsed">
+            <img src="new animated logo/social-ezgif.com-gif-maker.gif" alt="Social" class="icon-gif">
+            <span class="shine-text">social</span>
+          </div>
+          
+          <!-- Expanded: 2-column grid -->
+          <div class="social-expanded" id="socialExpanded">
+            <a href="https://instagram.com/speedabraker" target="_blank" rel="noopener noreferrer" class="social-link">
+              <img src="new animated logo/instagram-ezgif.com-gif-maker.gif" alt="Instagram" class="icon-gif">
+              <span>Instagram</span>
+            </a>
+            <a href="https://discord.gg/speedabraker" target="_blank" rel="noopener noreferrer" class="social-link">
+              <img src="new animated logo/discord-ezgif.com-gif-maker.gif" alt="Discord" class="icon-gif">
+              <span>Discord</span>
+            </a>
+            <a href="https://github.com/speedabraker" target="_blank" rel="noopener noreferrer" class="social-link">
+              <img src="new animated logo/website-ezgif.com-gif-maker.gif" alt="GitHub" class="icon-gif">
+              <span>GitHub</span>
+            </a>
+            <a href="https://youtube.com/@speedabraker" target="_blank" rel="noopener noreferrer" class="social-link">
+              <img src="new animated logo/youtube-ezgif.com-gif-maker.gif" alt="YouTube" class="icon-gif">
+              <span>YouTube</span>
+            </a>
+            <a href="https://roblox.com/users/speedabraker" target="_blank" rel="noopener noreferrer" class="social-link">
+              <img src="new animated logo/roblox-ezgif.com-gif-maker.gif" alt="Roblox" class="icon-gif">
+              <span>Roblox</span>
+            </a>
+            <a href="https://t.me/speedabraker" target="_blank" rel="noopener noreferrer" class="social-link">
+              <img src="new animated logo/telegram-ezgif.com-gif-maker.gif" alt="Telegram" class="icon-gif">
+              <span>Telegram</span>
+            </a>
+            <a href="https://steamcommunity.com/" target="_blank" rel="noopener noreferrer" class="social-link">
+              <img src="new animated logo/discord-ezgif.com-gif-maker.gif" alt="Steam" class="icon-gif">
+              <span>Steam</span>
+            </a>
+            <a href="https://open.spotify.com/" target="_blank" rel="noopener noreferrer" class="social-link">
+              <img src="new animated logo/music-ezgif.com-gif-maker.gif" alt="Spotify" class="icon-gif">
+              <span>Spotify</span>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Name -->
+        <span class="name">Sumit</span>
+      </div>
+    </div>
+  </main>
+
+  <footer class="attribution">
+    <a href="https://www.flaticon.com/free-animated-icons" title="Animated icons from Flaticon" target="_blank" rel="noopener noreferrer">Animated icons provided by Flaticon</a>
+  </footer>
+
+  <audio id="bgMusic" loop>
+    <source src="background music/Zara_Zara_Rehnaa_Hai_Terre_Dil_Mein_Piano_Instrumental_256kbps.webm" type="audio/webm">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
