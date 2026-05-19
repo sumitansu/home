@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Speedabraker - About">
+  <meta name="theme-color" content="#1a0a2e">
+  <title>Speedabraker | About</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Animated Dark Veil Background -->
+  <div class="background" aria-hidden="true">
+    <!-- Parallax Background Elements -->
+    <div class="stars-container" id="starsContainer"></div>
+    <div class="aurora" id="aurora"></div>
+    
+    <!-- Interactive Glowing Borders -->
+    <div class="border-glow-container">
+      <div class="glow-edge glow-top" id="glowTop"><div class="glow-bulge"></div></div>
+      <div class="glow-edge glow-bottom" id="glowBottom"><div class="glow-bulge"></div></div>
+      <div class="glow-edge glow-left" id="glowLeft"><div class="glow-bulge"></div></div>
+      <div class="glow-edge glow-right" id="glowRight"><div class="glow-bulge"></div></div>
+    </div>
+
+    <div class="veil-layer veil-1"></div>
+    <div class="veil-layer veil-2"></div>
+  </div>
+
+  <!-- NO CLICK OVERLAY FOR ABOUT PAGE -->
+
+  <!-- Top Navigation -->
+  <nav class="top-nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-box glassmorphism" id="navBox">
+      <!-- Collapsed State -->
+      <div class="nav-collapsed" id="navCollapsed">
+        <a href="https://sumitansu.github.io/home/" class="nav-icon-btn" aria-label="Home" id="homeBtn">
+          <svg class="icon-gif" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span class="btn-text shine-text">home</span>
+        </a>
+        <button class="nav-icon-btn" aria-label="Menu" id="menuBtn">
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <span class="btn-text shine-text">menu</span>
+        </button>
+        <button class="nav-icon-btn" aria-label="Music" id="musicBtn">
+          <svg class="icon-gif" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+          <span class="btn-text shine-text">music</span>
+        </button>
+      </div>
+      
+      <!-- Expanded Menu State -->
+      <div class="nav-expanded" id="navExpanded">
+        <a href="https://sumitansu.github.io/about/" class="menu-item" id="aboutBtn">
+          <svg class="icon-gif" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <span>About</span>
+        </a>
+        <button class="menu-item" id="statusBtn">
+          <svg class="icon-gif" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          <span>Status</span>
+        </button>
+        <button class="menu-item" id="gamesBtn">
+          <svg class="icon-gif" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="12" x2="10" y2="12"/><line x1="8" y1="10" x2="8" y2="14"/><line x1="15" y1="13" x2="15.01" y2="13"/><line x1="18" y1="11" x2="18.01" y2="11"/><rect x="2" y="6" width="20" height="12" rx="2"/></svg>
+          <span>Games</span>
+        </button>
+        <button class="menu-item" id="closeMenu">
+          <div class="custom-close">
+            <span></span>
+            <span></span>
+          </div>
+          <span>Close</span>
+        </button>
+      </div>
+      
+      <!-- Music Section (Hidden by default) -->
+      <div class="nav-music" id="navMusic">
+        <!-- Play/Pause Button -->
+        <button class="music-ctrl-btn" id="playPauseBtn" aria-label="Play/Pause">
+          <div class="play-pause-icon">
+            <span class="bar bar-1"></span>
+            <span class="bar bar-2"></span>
+          </div>
+        </button>
+        
+        <!-- Elastic Volume Bar -->
+        <div class="volume-wrapper">
+          <div class="volume-icon">
+            <!-- Initial static icon if needed, but JS handles it -->
+             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-volume-1"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+          </div>
+          <div class="elastic-slider" id="volumeSlider">
+            <div class="slider-track"></div>
+            <div class="slider-fill" id="volumeFill"></div>
+            <div class="slider-thumb" id="volumeThumb"></div>
+          </div>
+        </div>
+
+        <!-- Close Button -->
+        <button class="menu-item" id="closeMusic">
+          <div class="custom-close">
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero / Content Center -->
+  <main class="hero" id="hero">
+    <div class="hero-content" id="heroContent">
+      <h1 class="title">
+        <span class="shimmer-text">About Me</span>
+      </h1>
+      
+      <!-- Cards Container -->
+      <div class="about-cards-container">
+        
+        <!-- Left Card: Currently Learning -->
+        <div class="card-float-wrapper float-slow">
+          <div class="deco-1"></div>
+          <div class="deco-2"></div>
+          <div class="about-card glassmorphism" id="cardLearning">
+            <div class="card-inner">
+              <div class="card-header">
+                <div class="card-icon-wrapper">
+                  <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                </div>
+                <h2 class="card-title">Learning</h2>
+              </div>
+              <div class="card-body">
+                <div style="width: 100%;">
+                  <ul class="interests-list">
+                    <li class="interest-item" data-id="learning-editing">Editing</li>
+                    <li class="interest-item" data-id="learning-coding">Coding</li>
+                  </ul>
+                  <p style="margin-top: 1rem; font-size: 0.9rem; color: rgba(255,255,255,0.6); text-align: center;">Always ready to learn something new</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Center Card: Who Am I -->
+        <div class="card-float-wrapper float-medium">
+          <div class="deco-1"></div>
+          <div class="deco-2"></div>
+          <div class="about-card glassmorphism" id="cardWho">
+            <div class="card-inner">
+              <div class="card-header">
+                <div class="card-icon-wrapper">
+                  <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                </div>
+                <h2 class="card-title">Who Am I</h2>
+              </div>
+              <div class="card-body">
+                <p>I am Speedabraker. A passionate developer creating immersive digital experiences with a focus on performance and aesthetics.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Card: Interests -->
+        <div class="card-float-wrapper float-fast">
+          <div class="deco-1"></div>
+          <div class="deco-2"></div>
+          <div class="about-card glassmorphism" id="cardInterests">
+            <div class="card-inner">
+              <div class="card-header">
+                <div class="card-icon-wrapper">
+                  <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                </div>
+                <h2 class="card-title">Interests</h2>
+              </div>
+              <div class="card-body">
+                <ul class="interests-list">
+                  <li class="interest-item" data-id="gaming">Gaming</li>
+                  <li class="interest-item" data-id="coding">Coding</li>
+                  <li class="interest-item" data-id="editing">Editing</li>
+                  <li class="interest-item" data-id="exploiting">Exploiting</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+
+  <audio id="bgMusic" loop>
+    <source src="background music/Zara_Zara_Rehnaa_Hai_Terre_Dil_Mein_Piano_Instrumental_256kbps.webm" type="audio/webm">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Adjust path to script -->
+  <script src="script.js"></script>
+</body>
+</html>
